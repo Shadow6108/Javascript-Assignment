@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width , initial-scale=1.0">
+        <title>
+            Contact Us
+        </title>
+        <link rel="stylesheet" type="text/css" href="css/contact.css">
+        <link rel="stylesheet" type="text/css" href="css/style1.css">
+    </head>
+    <body background="img/background.jpg">
+        <div class="container">
+            <form action="https://formspree.io/f/mjvdaadq" method="post"  >
+                <fieldset>
+                    <legend><h1>Contact Us</h1></legend>
+                    <input type="text" id="fname" name="firstname"  pattern="[A-Za-z]{5,}"   placeholder="Your first name.." required ><br>
+                    <input type="text" id="lname" name="Lastname" pattern="[A-Za-z]{5,}" placeholder="Your last name.." required><br>
+                    <input type="email" id="email" name="e-mail" placeholder="Email ID" required><br>
+                    <input type="date" id="date" name="date" required><br>
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="Phone no." required><br>
+                    <textarea id="Message" name="message" placeholder="How can we help you? " required></textarea><br>
+                    <button type="submit" value="send" onclick="change1()">Submit</button>  
+                </fieldset>
+            </form>
+        </div>  
+        <script>
+            function change1(){
+                var firstname = document.getElementById("fname");
+                var lastname = document.getElementById("lname");
+                var mail = document.getElementById("email");
+                var  telephone = document.getElementById("phone");
+                var mess = document.getElementById("Message");
+                if( firstname.value.length<5){
+                    event.preventDefault();
+                    alert("There must be atleast 5 characters in First name");
+                    return;
+                }
+                if(lastname.value.length<5){
+                    event.preventDefault();
+                    alert("There must be atleast 5 characters in Last name");
+                    return;                
+                }
+                if(mail.value.indexOf(".") === -1){
+                    event.preventDefault();
+                    alert("Invalid email address");
+                    return;
+                }
+                if( telephone.value.length<10){
+                    event.preventDefault();
+                    alert("Invalid Phone number");
+                    return;
+                }
+                if(mess.value.length<50){
+                    event.preventDefault();
+                    alert("Query must contain atleast 50 characters.");
+                    return;
+                }
+            }
+        </script>    
+        <footer>
+            <p>Mohawk College</p>
+            <p>100 City Center Drive, Mississauga, ON L5B 2C9</p>
+            <a href="https://twitter.com/mohawkvisitsu?lang=en"><img src="img/twitter.png" alt="twitter"></a>
+            <a href="https://www.facebook.com/mohawkcollege/" target="_blank"><img src="img/facebook.png" alt="facebook"></a>
+            <a href="https://www.instagram.com/mohawk.college/?hl=en"><img src="img/instagram.png" alt="instagram"></a>
+        </footer>
+    </body>
+</html>

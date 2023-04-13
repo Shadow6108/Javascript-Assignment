@@ -1,0 +1,52 @@
+$color_1: yellow;
+$color_2: white;
+$color_3: red;
+$color_4:rgb(103, 6, 6);
+$color_5:rgb(128, 109, 109);
+header{
+    a{
+        color: $color_1;
+        transition: 1ms;
+        &:hover{
+            color:$color_2;
+        }
+    }
+}
+
+button{
+    width: 100px;
+    background-color: $color_3;
+    cursor: pointer;
+    text-transform: uppercase;
+    &::after {
+        content: "";
+        display: block;
+    }
+}
+
+fieldset{
+    border: dashed;
+    button{
+        background-color: $color_4;
+        border: 0;
+        color: $color_2;
+        cursor:pointer;
+        height: 30px;
+        width: 25%;
+        border-radius: 50px;
+        transition: 1s;
+        text-transform: uppercase;
+        &::after {
+            content: "";
+            display: block;
+        }
+        &:hover{
+            background-color:$color_5;
+        }
+    }
+}
+.next{
+    float: right ;
+}
+
+
